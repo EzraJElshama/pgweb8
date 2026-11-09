@@ -24,7 +24,8 @@ if ($result->num_rows > 0) {
             <th>Latitude</th>
             <th>Longitude</th>
             <th>Luas (Km2)</th>
-            <th>Jumlah Penduduk</th></tr>";
+            <th>Jumlah Penduduk</th>
+            <th colspan='2'>Aksi</th></tr>";
 
     while($row = $result->fetch_assoc()) {
         echo "<tr>
@@ -34,6 +35,8 @@ if ($result->num_rows > 0) {
         <td>".$row["long"]."</td>
         <td>".$row["luas"]."</td>
         <td align='right'>".$row["penduduk"]."</td>
+        <td><a href='delete.php?id=".$row["id"]."'>hapus</a></td>
+        <td><a href='edit/index.php?id=".$row["id"]."'>edit</a></td>
             </tr>";
     }
     echo "</table>";
